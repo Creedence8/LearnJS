@@ -2,7 +2,7 @@ var express = require("express");
 
 var app = express();
 
-app.use("/sp",express.static("public"));
+app.use("/sp",express.static(_dirname + "\public"));
 
 app.get("/main/:id", function(request, response){
 
