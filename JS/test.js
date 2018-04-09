@@ -1,2 +1,3 @@
-var str = ()=>{return "lllo"}
-console.log(str());
+var a = [["lol",'аааа'],["kek"]];
+a[1]=null;
+console.log(a[1]===null);
