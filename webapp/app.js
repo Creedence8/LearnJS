@@ -1,17 +1,16 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var fs = require("fs");
+var db = require('./db.js');
 
 var app = express();
 var jsonParser = bodyParser.json();
+db.setUpConnection();
 
 app.use(express.static(__dirname + "/public"));
 // получение списка данных
 app.get("/api/users", function(req, res){
-
-    var content = fs.readFileSync("users.json", "utf8");
-    var users = JSON.parse(content);
-    res.send(users);
+    console.log(db.getUsers.objects);
+    res.send("db.getUsers");
 });
 // получение одного пользователя по id
 app.get("/api/users/:id", function(req, res){
